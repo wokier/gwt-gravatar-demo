@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='gwt_gravatar_demo'>
+	<inherits name='com.google.gwt.user.User' />
+
+	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+	<inherits name='com.github.wokier.gwt.Gravatar' />
+
+	<entry-point class='com.github.wokier.gwt.gravatar.client.EntryPoint' />
+	
+	<source path='client' />
+	<source path='shared' />
+
+</module>
