@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wokier</groupId>
 	<artifactId>gwt-gravatar-demo</artifactId>
-	<version>1</version>
+	<version>2</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -37,6 +37,37 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.4.0</version>
+				<executions>
+					<execution>
+						<id>css-generation</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>css</goal>
+						</goals>
+					</execution>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+<!-- 							<goal>i18n</goal> -->
+<!-- 							<goal>generateAsync</goal> -->
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<warSourceDirectory>war</warSourceDirectory>
+					<runTarget>index.html</runTarget>
+					<module>com.github.wokier.gwt.gravatar.Gwt_gravatar_demo</module>
+					<style>${gwt.style}</style>
+					<hostedWebapp>${webappDirectory}</hostedWebapp>
+					<mode>selenium</mode>
+					<selenium>localhost:4444</selenium>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>${appengine.version}</version>
@@ -52,11 +83,11 @@
 		<dependency>
 			<groupId>com.github.wokier</groupId>
 			<artifactId>gwt-gravatar</artifactId>
-			<version>0.1</version>
+			<version>0.2</version>
 			<scope>provided</scope>
 		</dependency>
 
-<dependency>
+		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
 			<version>${gwt.version}</version>
@@ -73,6 +104,7 @@
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-dev</artifactId>
 			<version>${gwt.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 
