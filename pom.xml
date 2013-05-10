@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wokier</groupId>
 	<artifactId>gwt-gravatar-demo</artifactId>
-	<version>2</version>
+	<version>3</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>com.github.wokier</groupId>
 			<artifactId>gwt-gravatar</artifactId>
-			<version>0.2</version>
+			<version>0.3</version>
 			<scope>provided</scope>
 		</dependency>
 
